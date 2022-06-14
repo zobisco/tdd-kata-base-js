@@ -1,0 +1,43 @@
+{
+  "name": "tdd-kata-base",
+  "version": "1.0.0",
+  "description": "TDD kata base project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch",
+    "souls-mode": "./tcr.sh"
+  },
+  "keywords": [],
+  "author": "IWC",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.14.0",
+    "eslint": "^7.28.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "jest": "^27.5.1"
+  },
+  "eslintConfig": {
+    "plugins": [
+      "jest"
+    ],
+    "env": {
+      "es6": true
+    },
+    "parserOptions": {
+      "sourceType": "module"
+    }
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
+  },
+  "prettier": {
+    "semi": false
+  }
+}
