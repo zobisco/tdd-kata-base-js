@@ -33,19 +33,17 @@ export const checkout = (array) => {
     dCount = count.D
   }
 
-  if (aCount < 3) {
-    sum += aCount * 50
-  } else if (aCount % 3 === 0) {
-    let specialPrice = (aCount / 3) * 130
-    sum += specialPrice
-  }
+  const aRemainder = aCount % 3
+  let initialSum_a = aRemainder * 50
+  let discount_a = (aCount - aRemainder) / 3
+  let specialPrice_a = discount_a * 130
+  sum = sum + initialSum_a + specialPrice_a
 
-  if (bCount < 2) {
-    sum += bCount * 30
-  } else if (bCount % 2 === 0) {
-    let specialPrice = (bCount / 2) * 45
-    sum += specialPrice
-  }
+  const bRemainder = bCount % 2
+  let initialSum_b = bRemainder * 30
+  let discount_b = (bCount - bRemainder) / 2
+  let specialPrice_b = discount_b * 45
+  sum = sum + initialSum_b + specialPrice_b
 
   sum += cCount * 20
   sum += dCount * 15
